@@ -39,18 +39,18 @@ class _FavWidgetState extends State<FavWidget> {
 
   void removeFav(index)
   {
-    widget.favCheck[index]=0;
+    ChooseLocation.favCheck[index]=0;
     widget.favourite.remove(widget.locations[index]);
   }
 
   List<WorldTime> updateFav(int index) {
-    if (widget.favCheck[index]==0) {
-      widget.favCheck[index]=1;
+    if (ChooseLocation.favCheck[index]==0) {
+      ChooseLocation.favCheck[index]=1;
       widget.favourite.add(widget.locations[index]);
       print('widget.favourite');
     }
     else
-      widget.favCheck[index]=0;
+      ChooseLocation.favCheck[index]=0;
   }
 
   @override
@@ -89,10 +89,10 @@ class _FavWidgetState extends State<FavWidget> {
       trailing: InkWell(
         onTap: () {
           setState(() {
-            widget.favCheck[index] == 0? updateFav(index): removeFav(index);
+            ChooseLocation.favCheck[index] == 0? updateFav(index): removeFav(index);
           });
         },
-        child: (widget.favCheck[index] == 1) ? Icon(Icons.favorite, color: Colors.grey[700],) : Icon(Icons.favorite_border, color: Colors.grey[700]),
+        child: (ChooseLocation.favCheck[index] == 1) ? Icon(Icons.favorite, color: Colors.grey[700],) : Icon(Icons.favorite_border, color: Colors.grey[700]),
         //child: Icon(Icons.add),
       ),
     ),
