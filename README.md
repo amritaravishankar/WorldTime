@@ -1,10 +1,16 @@
-# world_time_app
+# WorldTime
 
-A new Flutter application. A simple World Time application. This application can be used to view the world time in various cities of the world. The app also allows you to favourite locations in order to access them easily.
+A simple World Time Flutter application 🕓 
+
+This application can be used to view the world time in various cities of the world. 
+The app also allows you to favourite locations in order to access them easily.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Prerequisites:
+
+1. Flutter
+2. WorldTime API : http://worldtimeapi.org
 
 A few resources to get you started if this is your first Flutter project:
 
