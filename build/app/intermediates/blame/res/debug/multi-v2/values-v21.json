@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/amritaravishankar/Desktop/Flutter/FlutterProjects/world_time_app/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-v21/values-v21.xml",
+            "outputFile": "/Users/amritaravishankar/Desktop/Flutter/FlutterProjects/WorldTime/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-v21/values-v21.xml",
             "map": [
                 {
                     "source": "/Users/amritaravishankar/.gradle/caches/transforms-2/files-2.1/0a271e99b6771ad4a84318244d532fb7/core-1.0.0/res/values-v21/values-v21.xml",
