@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:world_time_app/services/world_time.dart';
-import 'package:world_time_app/pages/favourites.dart';
-import 'package:world_time_app/pages/choose_location_page.dart';
+
 
 class ChooseLocation extends StatelessWidget {
   static List<int> favCheck = [0,0,0,0,0,0,0,0,0,0,0,0,0,0];
   static List<WorldTime> favourite = List();
+  static List<int> defaultCheck = [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0];
+  static String defaultLoc = "Mumbai";
 
   static List<WorldTime> locations = [
     WorldTime(url: 'Europe/Athens', location: 'Athens', flag: 'greece.png'),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:world_time_app/pages/choose_location.dart';
+import 'package:world_time_app/models/choose_location.dart';
 import 'package:world_time_app/services/world_time.dart';
 
 class Favourites extends StatefulWidget {

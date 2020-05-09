@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:world_time_app/services/world_time.dart';
-import 'package:world_time_app/pages/choose_location.dart';
+import 'package:world_time_app/models/choose_location.dart';
 
 class ChoosePage extends StatefulWidget {
   @override
@@ -92,7 +92,7 @@ class _FavWidgetState extends State<FavWidget> {
             widget.favCheck[index] == 0? updateFav(index): removeFav(index);
           });
         },
-        child: (widget.favCheck[index] == 1) ? Icon(Icons.favorite,) : Icon(Icons.favorite_border),
+        child: (widget.favCheck[index] == 1) ? Icon(Icons.favorite, color: Colors.grey[700],) : Icon(Icons.favorite_border, color: Colors.grey[700]),
         //child: Icon(Icons.add),
       ),
     ),

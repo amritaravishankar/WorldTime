@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:world_time_app/pages/choose_location.dart';
+import 'package:world_time_app/models/choose_location.dart';
 import 'package:world_time_app/services/world_time.dart';
+
 
 class Default extends StatefulWidget {
 
@@ -19,8 +20,8 @@ class _DefaultState extends State<Default> {
 class Def extends StatefulWidget {
 
   final List<WorldTime> locationList = ChooseLocation.locations;
-  final List<int> defaultCheck = [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0];
-  final String defaultLoc = "Mumbai";
+  final List<int> defaultCheck = ChooseLocation.defaultCheck;
+
 
   Def({Key key}):super(key:key);
 
@@ -30,21 +31,17 @@ class Def extends StatefulWidget {
 
 class _DefState extends State<Def> {
 
-  String defaultLoc = "Mumbai";
+  //String defaultLoc = "Mumbai";
 
   void updateDefault(index) {
     print('Option highlighted');
-    defaultLoc = widget.locationList[index].location;
+    //widget.defaultLoc = widget.locationList[index].location;
     for (int i = 0; i < widget.defaultCheck.length; i++) {
       if (widget.defaultCheck[i] == 1) {
         widget.defaultCheck[i] -= 1;
       }
     }
     widget.defaultCheck[index] = 1;
-  }
-
-  void removeDefault(index) {
-    widget.defaultCheck[index] = 0; //if all values are 0, display "no default location selected! Please select one!" or give out an Alert message
   }
 
   @override
@@ -59,7 +56,7 @@ class _DefState extends State<Def> {
         children: <Widget>[
           SizedBox(height: 75.0, child: Card(
               color: Colors.yellow[100],
-              child: Center(child: Text(defaultLoc,
+              child: Center(child: Text(ChooseLocation.defaultLoc,
                   style: TextStyle(
                       fontSize: 20.0, fontWeight: FontWeight.w500))))),
           SizedBox(
@@ -82,7 +79,8 @@ class _DefState extends State<Def> {
                           setState(() {
                             widget.defaultCheck[index] == 0
                                 ? updateDefault(index)
-                                : removeDefault(index);
+                                : Text("");
+                            ChooseLocation.defaultLoc = widget.locationList[index].location;
                             //storeIndex = index;
                           });
                         },
