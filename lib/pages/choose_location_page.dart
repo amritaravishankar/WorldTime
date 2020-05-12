@@ -12,15 +12,15 @@ class _ChoosePageState extends State<ChoosePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.grey[200],
-        appBar: AppBar(
+      backgroundColor: Colors.grey[200],
+      appBar: AppBar(
         backgroundColor: Colors.grey[800],
         title: Text('Choose a Location'),
-    centerTitle: true,
-    elevation: 0,
-    ),
-    body: FavWidget(),
-      );
+        centerTitle: true,
+        elevation: 0,
+      ),
+      body: FavWidget(),
+    );
   }
 }
 
@@ -70,38 +70,38 @@ class _FavWidgetState extends State<FavWidget> {
         itemCount: widget.locations.length,
         itemBuilder: (context, index) {
           return Column(
-          children: <Widget>[
-      Padding(
-      padding: const EdgeInsets.symmetric(
-          vertical: 1.0, horizontal: 4.0),
-    child: Card(
-    child: Column(
-    children: <Widget>[
-      ListTile(
-      onTap: () {
-        updateTime(index);
-      },
-      title: Text(widget.locations[index].location),
-      leading: CircleAvatar(
-        backgroundImage: AssetImage(
-            'assets/${widget.locations[index].flag}'),
-      ),
-      trailing: InkWell(
-        onTap: () {
-          setState(() {
-            ChooseLocation.favCheck[index] == 0? updateFav(index): removeFav(index);
-          });
-        },
-        child: (ChooseLocation.favCheck[index] == 1) ? Icon(Icons.favorite, color: Colors.grey[700],) : Icon(Icons.favorite_border, color: Colors.grey[700]),
-        //child: Icon(Icons.add),
-      ),
-    ),
-    ],
-    ),
-    ),
-      ),
-          ],
-      );
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                    vertical: 1.0, horizontal: 4.0),
+                child: Card(
+                  child: Column(
+                    children: <Widget>[
+                      ListTile(
+                        onTap: () {
+                          updateTime(index);
+                        },
+                        title: Text(widget.locations[index].location),
+                        leading: CircleAvatar(
+                          backgroundImage: AssetImage(
+                              'assets/${widget.locations[index].flag}'),
+                        ),
+                        trailing: InkWell(
+                          onTap: () {
+                            setState(() {
+                              ChooseLocation.favCheck[index] == 0? updateFav(index): removeFav(index);
+                            });
+                          },
+                          child: (ChooseLocation.favCheck[index] == 1) ? Icon(Icons.favorite, color: Colors.grey[700],) : Icon(Icons.favorite_border, color: Colors.grey[700]),
+                          //child: Icon(Icons.add),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          );
         }
     );
   }

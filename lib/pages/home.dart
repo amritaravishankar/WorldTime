@@ -44,17 +44,17 @@ class _HomeState extends State<Home> {
 
     else if(isDaytime == 'night')
     {
-      return Colors.indigo[900];
+      return Color(0xff080645);
     }
 
     else if(isDaytime == 'afternoon')
     {
-      return Colors.blue.shade400 ;
+      return Color(0xff47b9ff);
     }
 
     else if(isDaytime == 'evening')
     {
-      return Colors.purple[200];
+      return Color(0xff977ea8);
     }
   }
 

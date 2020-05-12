@@ -6,6 +6,7 @@ class Favourites extends StatefulWidget {
 
   final List<WorldTime> favouriteList = ChooseLocation.favourite;
   final List<int> favCheck = ChooseLocation.favCheck;
+  final List<WorldTime> locationList = ChooseLocation.locations;
 
   Favourites({Key key}):super(key:key);
 
@@ -17,6 +18,18 @@ class _FavouritesState extends State<Favourites> {
 
   Function delete(){
     print('Delete');
+  }
+
+  void removeFav(index)
+  {
+    int actualIndex = 0;
+    print(widget.favouriteList[index].location);
+    for (int i=0; i< widget.locationList.length; i++)
+      {
+        if (widget.locationList[i].location == widget.favouriteList[index].location)
+          actualIndex = i;
+      }
+    ChooseLocation.favCheck[actualIndex]=0;
   }
 
   @override
@@ -44,9 +57,9 @@ class _FavouritesState extends State<Favourites> {
           child: Padding(
             padding: const EdgeInsets.all(20.0),
             child: Text('No favourites to display yet!',
-            style: TextStyle(
-              fontSize: 25.0, letterSpacing: 0.5,
-            )
+                style: TextStyle(
+                  fontSize: 25.0, letterSpacing: 0.5,
+                )
             ),
           ),
         ): ListView.builder(
@@ -66,10 +79,8 @@ class _FavouritesState extends State<Favourites> {
                       trailing: FlatButton.icon(
                         onPressed:() {
                           setState(() {
-                            ChooseLocation.favCheck[index]=0;
+                            removeFav(index);
                             widget.favouriteList.remove(widget.favouriteList[index]);
-                            //deleteFav(index);
-                            print(ChooseLocation.favCheck);
                           });
                         },
                         label: Text(''),

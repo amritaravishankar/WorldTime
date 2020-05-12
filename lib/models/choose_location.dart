@@ -20,7 +20,7 @@ class ChooseLocation extends StatelessWidget {
     WorldTime(url: 'Asia/Kolkata', location: 'Mumbai', flag: 'india.png'),
     WorldTime(url: 'Africa/Nairobi', location: 'Nairobi', flag: 'kenya.png'),
     WorldTime(url: 'America/New_York', location: 'New York', flag: 'usa.png'),
-    WorldTime(url: 'Asia/Singapore', location: 'Singapore', flag: 'singapore 2.png'),
+    WorldTime(url: 'Asia/Singapore', location: 'Singapore', flag: 'singapore.png'),
     WorldTime(url: 'Asia/Seoul', location: 'Seoul', flag: 'south_korea.png'),
     WorldTime(url: 'Asia/Shanghai', location: 'Shanghai', flag: 'china.png'),
   ];
