@@ -12,6 +12,8 @@ Prerequisites:
 1. Flutter
 2. WorldTime API : http://worldtimeapi.org
 
+Further, this application is a follow along of Net Ninja's "Flutter Tutorial For Beginners". I have added many additional features of my own.
+
 A few resources to get you started if this is your first Flutter project:
 
 - [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
